@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ratemypfp — get your vibe score</title>
+<meta name="description" content="drop your pfp, get your vibe score. processed on your device, nothing uploaded.">
+<meta name="theme-color" content="#fdf4ff">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-stage="0">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="#top"><span class="logo-dot"></span><span id="logoText">ratemypfp</span></a>
+  <nav class="nav-links">
+    <a href="#how" id="navA">how it works</a>
+    <a href="#s1" id="navB">results</a>
+    <a href="#top" id="navC" class="nav-cta">try it</a>
+  </nav>
+</header>
+
+<canvas id="mini" class="mini" width="128" height="128" aria-hidden="true"></canvas>
+
+<button id="soundBtn" class="sound" type="button" aria-pressed="false" title="sound is off by default">
+  <span class="sound-ico">🔇</span><span class="sound-lbl">sound off</span>
+</button>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="hero-inner">
+    <p class="pill">✨ rated by people who should be asleep</p>
+    <h1>drop your pfp.<br><span class="grad">get your vibe score.</span></h1>
+    <p class="sub">aura, rizz, main character energy. our model reads your pfp and tells you what the timeline already thinks.</p>
+
+    <label class="drop" id="drop">
+      <input type="file" id="file" accept="image/*">
+      <canvas id="heroPfp" width="256" height="256"></canvas>
+      <span class="drop-txt">
+        <strong id="dropTitle">tap to drop your pfp</strong>
+        <small id="dropSub">jpg, png, webp. or just scroll and we'll use a sample</small>
+      </span>
+    </label>
+
+    <p class="privacy">🔒 runs 100% on your device. your image never leaves your browser, we literally can't see it. no accounts, no trackers.</p>
+    <a class="scroll-hint" href="#s1">scroll for your results ↓</a>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="how-grid">
+    <div class="how-card"><span>01</span><h3>drop it</h3><p>any pfp. anime, selfie, ape, your cat. we don't judge (we do).</p></div>
+    <div class="how-card"><span>02</span><h3>we read it</h3><p>142 vibe signals. lighting, crop, eye contact, the energy you thought nobody noticed.</p></div>
+    <div class="how-card"><span>03</span><h3>post the card</h3><p>get a result card made for the timeline. ratio your friends.</p></div>
+  </div>
+</section>
+
+<!-- ============ STAGE 1: flattering ============ -->
+<section class="stage s1" id="s1" data-stage="1">
+  <div class="stage-head reveal">
+    <p class="kicker">your results</p>
+    <h2>ok you ate.</h2>
+  </div>
+  <div class="s1-grid">
+    <div class="pfp-card reveal">
+      <canvas class="pfp" data-level="0" width="384" height="384"></canvas>
+      <div class="score-badge"><small>vibe score</small><b id="score1">9.4</b></div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><span>aura</span><i style="--v:94%"></i><b>94</b></div>
+      <div class="stat"><span>rizz</span><i style="--v:88%"></i><b>88</b></div>
+      <div class="stat"><span>main character energy</span><i style="--v:97%"></i><b>97</b></div>
+      <div class="stat"><span>approachable</span><i style="--v:82%"></i><b>82</b></div>
+      <div class="stat"><span>touch grass index</span><i style="--v:12%"></i><b>12</b></div>
+    </div>
+  </div>
+  <div class="chips reveal">
+    <span>top 3% this week</span><span>"lowkey iconic"</span><span>crop: immaculate</span><span>lighting: blessed</span>
+  </div>
+  <p class="quote reveal">this pfp gets followed back. we checked.</p>
+</section>
+
+<!-- ============ STAGE 2: oddly specific ============ -->
+<section class="stage s2" id="s2" data-stage="2">
+  <div class="stage-head reveal">
+    <p class="kicker">deeper read</p>
+    <h2>we looked a little closer.</h2>
+  </div>
+  <div class="s2-layout">
+    <canvas class="pfp pfp-mid reveal" data-level="0.22" width="384" height="384"></canvas>
+    <ul class="obs">
+      <li class="reveal">you cropped this one yourself. the edges are too careful.</li>
+      <li class="reveal">this isn't the first pfp you tried today.</li>
+      <li class="reveal">the lighting says casual. the retakes say otherwise.</li>
+      <li class="reveal">there's something in the background you didn't notice. it's fine. probably.</li>
+      <li class="reveal">your pfp has made eye contact with thousands of strangers this month. it remembers every one.</li>
+    </ul>
+  </div>
+  <div class="recalc reveal"><span>vibe score</span><b>9.4</b><em>→</em><b class="dim">7.1</b><small>recalculating…</small></div>
+</section>
+
+<!-- ============ STAGE 3: personal ============ -->
+<section class="stage s3" id="s3" data-stage="3">
+  <div class="stage-head reveal">
+    <p class="kicker gl">personal read</p>
+    <h2 class="gl">it's <span data-k="time">late</span>.</h2>
+  </div>
+  <div class="s3-layout">
+    <div class="term reveal">
+      <p>&gt; local time ........ <span data-k="time">--</span></p>
+      <p>&gt; location ......... <span data-k="city">--</span></p>
+      <p>&gt; device ........... <span data-k="device">--</span></p>
+      <p>&gt; screen ........... <span data-k="screen">--</span>px wide</p>
+      <p>&gt; on this page ..... <span data-k="elapsed">--</span></p>
+      <p>&gt; scrolled back up . <span data-k="ups">0</span> times</p>
+      <p class="blink">&gt; nothing leaves this device. it doesn't need to.</p>
+    </div>
+    <canvas class="pfp pfp-mid reveal" data-level="0.48" width="384" height="384"></canvas>
+  </div>
+  <div class="lines">
+    <p class="reveal gl" data-k="timeLine">why are you awake right now.</p>
+    <p class="reveal gl">you're in <span data-k="city">your room</span>. the lights are <span data-k="lights">on</span></p>
+    <p class="reveal gl" data-k="batteryLine">you're holding your phone a little too close.</p>
+    <p class="reveal gl">you've been staring at your own face for <span data-k="elapsed">a while</span>. does it look right to you?</p>
+  </div>
+</section>
+
+<!-- ============ STAGE 4: breaking ============ -->
+<section class="stage s4" id="s4" data-stage="4">
+  <div class="stage-head reveal">
+    <p class="kicker gl">updated stats</p>
+    <h2 class="gl">it's not your pfp anymore.</h2>
+  </div>
+  <div class="s4-layout">
+    <canvas class="pfp pfp-big reveal" data-level="0.74" width="384" height="384"></canvas>
+    <div class="stats broken reveal">
+      <div class="stat"><span>aura</span><i style="--v:6%"></i><b>-8</b></div>
+      <div class="stat"><span>rizz</span><i style="--v:0%"></i><b>[it took it]</b></div>
+      <div class="stat"><span>main character energy</span><i style="--v:100%"></i><b>transferred</b></div>
+      <div class="stat"><span>you</span><i style="--v:3%"></i><b>fading</b></div>
+    </div>
+  </div>
+  <div class="comments reveal">
+    <p class="c-title">what others said</p>
+    <div class="c"><b>@user4471</b> lmao mine said i ate too</div>
+    <div class="c"><b>@softgirlera</b> wait why did my score drop</div>
+    <div class="c"><b>@user4471</b> mine did this too</div>
+    <div class="c"><b>@user4471</b> mine did this too</div>
+    <div class="c"><b>@user4471</b> is it behind you yet</div>
+    <div class="c ghost"><b>@<span data-k="handle">you</span></b> <span class="typing">typing…</span></div>
+  </div>
+  <div class="stop">
+    <p class="reveal">you can stop scrolling.</p>
+    <p class="reveal">you can stop scrolling.</p>
+    <p class="reveal small">you won't.</p>
+  </div>
+</section>
+
+<!-- ============ STAGE 5: horror scene (sticky) ============ -->
+<section class="stage s5" id="s5" data-stage="5">
+  <div class="s5-sticky">
+    <svg class="eyes" id="eyes" aria-hidden="true"></svg>
+    <canvas class="pfp pfp-horror" data-level="1" width="384" height="384"></canvas>
+    <div class="s5-text">
+      <p data-at="0.08">it's <span data-k="time">late</span>.</p>
+      <p data-at="0.2">you're in <span data-k="city">your room</span>.</p>
+      <p data-at="0.32">you've been here <span data-k="elapsed">a while</span>.</p>
+      <p data-at="0.44" data-k="upsLine">you never scrolled back up. good. it doesn't like that.</p>
+      <p data-at="0.58">it was never a rating.</p>
+      <p data-at="0.7" class="big">it was a mirror.</p>
+      <p data-at="0.86" class="small">your result is ready.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section class="result" id="result">
+  <p class="kicker">final result</p>
+  <h2 id="resultTitle">…</h2>
+  <canvas id="card" width="1080" height="1350"></canvas>
+  <div class="actions">
+    <button id="dlBtn" type="button" class="btn">download card</button>
+    <a id="shareBtn" class="btn ghost-btn" target="_blank" rel="noopener">share on x</a>
+  </div>
+  <p class="note">x can't attach images from a link, so download the card and add it to your post.</p>
+  <p class="again"><a href="#top" id="againBtn">try another pfp</a> · <a href="#top">i'm fine</a></p>
+  <footer>ratemypfp · made by <a href="https://x.com/voidhl" target="_blank" rel="noopener">@voidhl</a> · everything ran on your device</footer>
+</section>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
